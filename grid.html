@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Revision</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        padding: 1rem 5rem;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero1 > img {
+        width: 100%;
+        height: 100%;
+      }
+      .hero2 {
+        padding: 2rem;
+        background-color: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+          "a a b c"
+          "d e f g"
+          "h h i i"
+          "j j k k";
+      }
+      .box {
+        height: 200px;
+        font-size: 1.5rem;
+      }
+      .box1 {
+        background-color: aqua;
+        /* grid-column-start: 1;
+        grid-column-end: 3; */
+        /* grid-column: 1 / span 2; */
+        grid-area: a;
+      }
+      .box2 {
+        background-color: red;
+        grid-area: b;
+      }
+      .box3 {
+        background-color: darkorchid;
+        grid-area: c;
+      }
+      .box4 {
+        background-color: green;
+        grid-area: d;
+      }
+      .box5 {
+        background-color: yellow;
+        grid-area: e;
+      }
+      .box6 {
+        background-color: yellowgreen;
+        grid-area: f;
+      }
+      .box7 {
+        background-color: rgb(104, 87, 157);
+        grid-area: g;
+      }
+      .box8 {
+        background-color: rgb(25, 90, 212);
+        /* grid-column: 1 / span 2; */
+        grid-area: h;
+      }
+      .box9 {
+        background-color: rgb(31, 208, 123);
+        /* grid-column: 3 / span 4; */
+        grid-area: i;
+      }
+      .box10 {
+        background-color: rgb(48, 202, 225);
+        /* grid-column: 1 / span 2; */
+        height: 250px;
+        grid-area: j;
+      }
+      .box11 {
+        background-color: rgb(233, 140, 19);
+        /* grid-column: 3 / span 4; */
+        height: 250px;
+        grid-area: k;
+      }
+      .contact {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+          "a b"
+          "c c"
+          "d d";
+      }
+      .form {
+        grid-area: a;
+        background-color: rgba(255, 99, 71, 0.59);
+        padding: 0 2rem;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .details {
+        grid-area: b;
+      }
+      .details > img {
+        width: 100%;
+        height: 100%;
+      }
+      .map {
+        grid-area: c;
+      }
+      .copyright {
+        grid-area: d;
+        background-color: antiquewhite;
+        padding: 2rem;
+        text-align: center;
+      }
+      .map > img {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+      }
+
+      /* small screen  */
+      @media all and (min-width: 310px) and (max-width: 424px) {
+        .container {
+          padding: 1rem 0.5rem;
+        }
+        .hero {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+        }
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d"
+            "e"
+            "f"
+            "g"
+            "h"
+            "i"
+            "j"
+            "k";
+        }
+        .contact {
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d";
+        }
+        .form {
+          padding: 1rem;
+        }
+        .map {
+          display: none;
+        }
+        .copyright {
+          grid-area: d;
+          background-color: antiquewhite;
+          padding: 1rem;
+          text-align: center;
+        }
+      }
+
+      /* mid screen  */
+      @media all and (min-width: 425px) and (max-width: 768px) {
+        .container {
+          padding: 1rem 1rem;
+        }
+        .hero {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+        }
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-areas:
+            "a a"
+            "b c"
+            "d e"
+            "f g"
+            "h h"
+            "i i"
+            "j j"
+            "k k";
+        }
+        .contact {
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d";
+        }
+        .form {
+          padding: 1rem;
+        }
+        .copyright {
+          grid-area: d;
+          background-color: antiquewhite;
+          padding: 1rem;
+          text-align: center;
+        }
+      }
+
+      /* medium screen  */
+      @media all and (min-width: 769px) and (max-width: 1024px) {
+        .container {
+          padding: 1rem 2rem;
+        }
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-areas:
+            "a a"
+            "b c"
+            "d e"
+            "f g"
+            "h h"
+            "i i"
+            "j j"
+            "k k";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero">
+        <div class="hero1">
+          <img
+            src="https://images.unsplash.com/photo-1662436267764-13f43cfe0a12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+            alt=""
+          />
+        </div>
+        <div class="hero2">
+          <h2>Hello i am Stimulus currently making a grid layout.</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+            dolore, deleniti iste ut enim quidem deserunt eligendi aut nisi
+            tempore, neque nostrum corporis dolor molestiae cumque cum aliquid.
+            Aliquam, placeat.
+          </p>
+          <button>Get Started</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+        <div class="box box5">box5</div>
+        <div class="box box6">box6</div>
+        <div class="box box7">box7</div>
+        <div class="box box8">box8</div>
+        <div class="box box9">box9</div>
+        <div class="box box10">box10</div>
+        <div class="box box11">box11</div>
+      </div>
+
+      <div class="contact">
+        <div class="form">
+          <h2>Say hello...</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <input type="text" /> <br />
+          <input type="text" /> <br />
+          <button>submit</button>
+        </div>
+        <div class="details">
+          <img
+            src="https://images.unsplash.com/photo-1657214058744-7ff3b448c205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+            alt=""
+          />
+        </div>
+        <div class="map">
+          <img
+            src="https://www.nationsonline.org/maps/Physical-World-Map-3360.jpg"
+            alt=""
+          />
+        </div>
+        <div class="copyright">
+          <p>Copyright @ 2022 Jitesh Sirohi</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
